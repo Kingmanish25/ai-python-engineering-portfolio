@@ -1,0 +1,17 @@
+Financial Documents
+       ↓
+Document Loader
+       ↓
+Chunking
+       ↓
+Embeddings
+       ↓
+FAISS Vector DB
+       ↓
+Retriever
+       ↓
+Ollama LLM
+       ↓
+Answer Generator
+       ↓
+Streamlit UI
