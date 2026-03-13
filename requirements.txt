@@ -1,0 +1,13 @@
+pandas
+numpy
+matplotlib
+requests
+beautifulsoup4
+scikit-learn
+langchain
+faiss-cpu
+sentence-transformers
+torch
+transformers
+streamlit
+mlflow
