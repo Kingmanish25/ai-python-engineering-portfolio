@@ -1,0 +1,2 @@
+(no external dependencies)
+used only smtplib
