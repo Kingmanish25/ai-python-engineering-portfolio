@@ -1,1 +1,6 @@
-
+langchain
+faiss-cpu
+sentence-transformers
+ollama
+streamlit
+pandas
