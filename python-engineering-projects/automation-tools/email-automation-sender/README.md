@@ -139,7 +139,5 @@ Possible enhancements:
 ---
 
 ## Author
-*Manish Rathi
-*AI & Python Engineering Portfolio
 Manish Rathi
 AI & Python Engineering Portfolio
