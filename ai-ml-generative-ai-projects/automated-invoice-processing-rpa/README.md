@@ -69,7 +69,6 @@ automated-invoice-processing-rpa
 │   ├── validation_engine.py
 │   └── database_writer.py
 │
-├── invoices.db
 ├── requirements.txt
 └── README.md
 ```
