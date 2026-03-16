@@ -1,2 +1,5 @@
-yfinance
-pandas
+# Stock Price Analyzer
+# External dependency required for financial market data
+
+yfinance==0.2.40
+pandas==2.2.2
