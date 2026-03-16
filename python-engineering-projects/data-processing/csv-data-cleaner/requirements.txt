@@ -1,1 +1,4 @@
-pandas
+# CSV Data Cleaner
+# External dependency required for data processing
+
+pandas==2.2.2
