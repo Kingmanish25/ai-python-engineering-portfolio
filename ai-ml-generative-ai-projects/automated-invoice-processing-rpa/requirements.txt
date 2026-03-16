@@ -1,5 +1,20 @@
-pytesseract
-pdfplumber
-pandas
-selenium
-sqlite3
+# PDF Processing
+pdfplumber==0.11.0
+pypdf==4.2.0
+
+# OCR
+pytesseract==0.3.10
+Pillow==10.3.0
+
+# Data Processing
+pandas==2.2.2
+numpy==1.26.4
+
+# Visualization
+matplotlib==3.8.4
+
+# Data Validation
+pydantic==2.7.1
+
+# Progress Tracking
+tqdm==4.66.4
