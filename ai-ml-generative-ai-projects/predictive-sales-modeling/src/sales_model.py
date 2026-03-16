@@ -9,7 +9,7 @@ class SalesMLP(nn.Module):
 
         super().__init__()
 
-        self.model = nn.Sequential(
+        self.net = nn.Sequential(
             nn.Linear(input_size, 64),
             nn.ReLU(),
             nn.Linear(64, 32),
@@ -19,6 +19,7 @@ class SalesMLP(nn.Module):
 
     def forward(self, x):
 
+        return self.net(x)
         return self.model(x)
 
 
