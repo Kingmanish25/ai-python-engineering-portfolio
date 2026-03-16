@@ -1,1 +1,4 @@
-psutil
+# System Resource Monitor
+# External dependency required for monitoring system resources
+
+psutil==5.9.8
