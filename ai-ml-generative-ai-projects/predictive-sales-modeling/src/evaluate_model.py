@@ -14,6 +14,6 @@ def rmse(y_true, y_pred):
 def evaluate(y_true, y_pred):
 
     return {
-        "MAE": mae(y_true, y_pred),
-        "RMSE": rmse(y_true, y_pred)
+        "MAE": float(mae(y_true, y_pred)),
+        "RMSE": float(rmse(y_true, y_pred))
     }
