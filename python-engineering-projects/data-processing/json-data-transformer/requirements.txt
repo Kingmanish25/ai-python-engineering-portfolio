@@ -1,1 +1,8 @@
+# JSON Data Transformer
+# This project uses only Python standard library modules.
 
+# Standard library modules used:
+# json
+# argparse
+# logging
+# os
