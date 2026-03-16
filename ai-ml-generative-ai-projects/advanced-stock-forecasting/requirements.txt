@@ -1,6 +1,8 @@
-pandas
-numpy
-prophet
-statsmodels
-torch
-matplotlib
+pandas==2.2.2
+numpy==1.26.4
+scikit-learn==1.4.2
+matplotlib==3.8.4
+statsmodels==0.14.2
+prophet==1.1.5
+tensorflow==2.15.0
+yfinance==0.2.40
