@@ -1,13 +1,16 @@
 import matplotlib.pyplot as plt
+import os
 
 
-def plot_forecast(dates, actual, predicted):
+def save_forecast_plot(dates, actual, predicted):
+
+    os.makedirs("../screenshots", exist_ok=True)
 
     plt.figure(figsize=(12,6))
 
-    plt.plot(dates, actual, label="Actual Price")
+    plt.plot(dates, actual, label="Historical Price")
 
-    plt.plot(dates[-len(predicted):], predicted, label="Forecast")
+    plt.plot(dates[-len(predicted):], predicted, label="Forecast", color="red")
 
     plt.title("Stock Price Forecast")
 
@@ -19,4 +22,8 @@ def plot_forecast(dates, actual, predicted):
 
     plt.grid(True)
 
-    plt.show()
+    plt.tight_layout()
+
+    plt.savefig("../screenshots/forecast_plot.png")
+
+    plt.close()
