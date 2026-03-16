@@ -1,1 +1,7 @@
+# Large File Processor
+# This project uses only Python standard library modules.
 
+# Standard library modules used:
+# argparse
+# logging
+# os
