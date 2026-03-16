@@ -1,2 +1,5 @@
-requests
-beautifulsoup4
+# E-commerce Price Tracker
+# External dependencies required for web scraping
+
+requests==2.31.0
+beautifulsoup4==4.12.3
