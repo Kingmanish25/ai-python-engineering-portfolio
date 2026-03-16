@@ -1,1 +1,4 @@
-requests
+# Crypto Price Scraper
+# External dependency required for API requests
+
+requests==2.31.0
