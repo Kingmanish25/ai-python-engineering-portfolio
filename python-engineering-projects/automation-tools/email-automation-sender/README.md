@@ -1,31 +1,32 @@
 # Email Automation Sender
 
-A lightweight Python automation tool that sends emails using the SMTP protocol.
-This project demonstrates practical Python scripting for email automation and command-line utilities.
+A lightweight Python automation utility for sending emails through an SMTP server.
+This project demonstrates practical Python scripting for **email automation, CLI tool development, and secure credential handling**.
 
 ---
 
 ## Overview
 
-The Email Automation Sender allows users to send emails directly from the command line using Python.
-It connects to an SMTP server (such as Gmail) and sends messages securely using TLS encryption.
+**Email Automation Sender** is a command-line Python tool that allows users to send emails directly from the terminal.
+It connects to an SMTP server (such as Gmail) using a secure TLS connection and sends messages automatically.
 
-This project demonstrates:
+This project demonstrates practical engineering concepts such as:
 
-* Python SMTP email automation
+* SMTP-based email automation in Python
 * Command-line interface (CLI) utilities
 * Secure credential management using environment variables
-* Logging and error handling
+* Logging and basic error handling
+* Writing clean and modular Python scripts
 
 ---
 
 ## Features
 
 * Send emails directly from the command line
-* Secure SMTP connection using TLS
-* Uses environment variables for email credentials
-* Simple CLI interface for specifying receiver, subject, and message
-* Logging for successful or failed email delivery
+* Secure SMTP connection using TLS encryption
+* Environment variable–based credential management
+* Simple CLI interface for receiver, subject, and message body
+* Logging to track successful or failed email delivery
 
 ---
 
@@ -58,33 +59,38 @@ Install dependencies (if required):
 pip install -r requirements.txt
 ```
 
+> This project primarily uses Python's standard library.
+
 ---
 
-## Setup Environment Variables
+## Environment Setup
 
-Before running the script, set the following environment variables.
+Before running the script, configure the required environment variables.
 
 ### Windows (CMD)
 
-```bash
+```
 set EMAIL_SENDER=your_email@gmail.com
 set EMAIL_PASSWORD=your_app_password
 ```
 
 ### Windows (PowerShell)
 
-```bash
+```
 $env:EMAIL_SENDER="your_email@gmail.com"
 $env:EMAIL_PASSWORD="your_app_password"
 ```
+
+⚠️ **Important:**
+For Gmail accounts, you should use a **Google App Password** instead of your normal account password.
 
 ---
 
 ## Usage
 
-Run the script using the command line.
+Run the script from the project root directory:
 
-```bash
+```
 python src/main.py --receiver receiver@email.com --subject "Test Email" --body "Hello from Python automation"
 ```
 
@@ -92,7 +98,7 @@ python src/main.py --receiver receiver@email.com --subject "Test Email" --body "
 
 ## Example
 
-```bash
+```
 python src/main.py --receiver user@email.com --subject "Test Email" --body "This is an automated email"
 ```
 
@@ -106,39 +112,39 @@ Example output:
 
 ## How It Works
 
-1. The script reads the sender email and password from environment variables.
-2. It accepts receiver, subject, and body as command-line arguments.
-3. It establishes a secure SMTP connection using TLS.
-4. The email is sent using Python’s `smtplib` module.
-5. Logging reports whether the email was sent successfully.
+1. The script reads the sender credentials from environment variables.
+2. Command-line arguments provide the receiver email, subject, and message body.
+3. The program establishes a secure SMTP connection using TLS.
+4. The email is sent using Python's built-in `smtplib` module.
+5. Logging confirms whether the email was delivered successfully.
 
 ---
 
 ## Use Cases
 
-This tool can be used for:
+This automation tool can be used for:
 
-* Email automation scripts
-* Notification systems
-* Monitoring alerts
-* DevOps automation utilities
-* Learning SMTP email automation in Python
+* Automated email notifications
+* System monitoring alerts
+* DevOps automation scripts
+* Scheduled email tasks
+* Learning Python SMTP automation
 
 ---
 
 ## Future Improvements
 
-Possible enhancements:
+Potential enhancements for this tool include:
 
-* Support multiple recipients
-* Add HTML email support
-* Attach files to emails
-* Email scheduling functionality
-* Integration with task schedulers
+* Support for multiple recipients
+* HTML email formatting
+* File attachment support
+* Email scheduling
+* Integration with job schedulers or task queues
 
 ---
 
 ## Author
 
-Manish Rathi
+**Manish Rathi**
 AI & Python Engineering Portfolio
