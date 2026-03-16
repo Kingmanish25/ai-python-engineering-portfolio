@@ -37,9 +37,6 @@ json-csv-converter-cli
 │
 ├── README.md
 ├── requirements.txt
-│
-├── data.json
-│
 └── src
     └── main.py
 ```
