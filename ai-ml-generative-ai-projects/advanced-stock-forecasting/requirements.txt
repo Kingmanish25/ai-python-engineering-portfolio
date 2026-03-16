@@ -9,16 +9,15 @@ seaborn==0.13.2
 # Machine Learning
 scikit-learn==1.4.2
 
-# Time Series Models
+# Time Series Modeling
 statsmodels==0.14.2
+
+# Forecasting Models
 prophet==1.1.5
 
 # Deep Learning
 tensorflow==2.15.0
 
-# Financial Data
-yfinance==0.2.40
-
-# Notebook Support
+# Notebook Environment
 jupyter==1.0.0
 ipykernel==6.29.4
