@@ -1,1 +1,8 @@
+# Folder Sync Tool
+# This project uses only Python standard library modules.
 
+# Standard library modules used:
+# os
+# shutil
+# argparse
+# logging
