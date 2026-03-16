@@ -22,8 +22,8 @@ def moving_average_strategy(ticker, period, window):
 
     data[f"MA{window}"] = data["Close"].rolling(window=window).mean()
 
-    latest_price = data["Close"].iloc[-1]
-    latest_ma = data[f"MA{window}"].iloc[-1]
+    latest_price = data["Close"].iloc[-1].item()
+    latest_ma = data[f"MA{window}"].iloc[-1].item()
 
     print("\nMarket Analysis:\n")
 
