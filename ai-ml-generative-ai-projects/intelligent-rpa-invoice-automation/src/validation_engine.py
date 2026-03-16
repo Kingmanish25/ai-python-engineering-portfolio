@@ -1,20 +1,46 @@
-def validate_invoice(invoice):
+import re
+
+
+def validate_email(email):
+
+    pattern = r"^[\w\.-]+@[\w\.-]+\.\w+$"
+
+    return re.match(pattern, email) is not None
+
+
+def validate_row(row):
 
     errors = []
 
-    if "invoice_id" not in invoice:
-        errors.append("Missing invoice ID")
+    if row["qty"] <= 0:
+        errors.append("Invalid quantity")
 
-    if "amount" not in invoice:
-        errors.append("Missing amount")
+    if row["amount"] <= 0:
+        errors.append("Invalid price")
 
-    if invoice.get("amount", 0) <= 0:
-        errors.append("Invalid amount")
+    if not validate_email(row["email"]):
+        errors.append("Invalid email")
 
-    if "vendor" not in invoice:
-        errors.append("Missing vendor")
+    if row["product_id"] <= 0:
+        errors.append("Invalid product id")
 
-    if errors:
-        return False, errors
+    return errors
 
-    return True, []
+
+def validate_dataset(df):
+
+    validation_errors = []
+
+    for idx, row in df.iterrows():
+
+        errors = validate_row(row)
+
+        if errors:
+            validation_errors.append(
+                {
+                    "row": idx,
+                    "errors": errors
+                }
+            )
+
+    return validation_errors
