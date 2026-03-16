@@ -1,1 +1,8 @@
+# Todo Manager CLI Tool
+# This project uses only Python standard library modules.
 
+# Standard library modules used:
+# argparse
+# json
+# logging
+# os
