@@ -1,2 +1,2 @@
-(no external dependencies)
-used only smtplib
+# This project uses only Python standard library modules.
+# No external dependencies required.
