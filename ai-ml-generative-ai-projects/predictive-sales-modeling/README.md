@@ -1,66 +1,142 @@
 # Predictive Sales Modeling (Retail)
 
-This project implements a **production-style retail sales forecasting system** using statistical baselines, machine learning, and deep learning models.
+This project implements an **end-to-end retail sales forecasting system** using statistical baselines, machine learning, and deep learning techniques.
 
-The system predicts future sales using historical retail transaction data and evaluates multiple forecasting approaches.
+The goal is to predict future retail revenue using historical transaction data while following **production-style machine learning pipeline practices**.
 
 ---
 
 # Project Overview
 
-Retail businesses rely heavily on accurate demand forecasting to optimize inventory planning and supply chain decisions.
+Retail businesses rely heavily on accurate demand forecasting to support:
 
-This project builds a complete machine learning pipeline that:
+* inventory planning
+* marketing strategies
+* supply chain optimization
+* revenue forecasting
 
-1. Loads raw transactional sales data
-2. Aggregates time-series features
-3. Generates lag-based forecasting features
-4. Trains machine learning and deep learning models
-5. Evaluates predictions using regression metrics
+This project converts raw retail transaction data into **time-series datasets** and trains forecasting models using engineered features.
 
----
+The pipeline includes:
 
-# Features
-
-The system implements:
-
-* Time-aware train/test splitting (no data leakage)
-* Lag feature engineering
-* Calendar feature extraction
-* Benchmark baseline models
-* PyTorch neural networks for forecasting
-* Model evaluation using MAE and RMSE
-* JSON-based metric reporting
+1. Data ingestion and preprocessing
+2. Time-series aggregation
+3. Feature engineering
+4. Baseline forecasting models
+5. PyTorch-based neural network forecasting
+6. Model evaluation and reporting
 
 ---
 
-# Models Implemented
+# Dataset
 
-### Naive Baseline
+The dataset contains **retail transaction records** with customer and product information.
+
+Example dataset structure:
+
+```
+Transaction ID,date,Customer ID,Gender,Age,Product Category,Quantity,Price per Unit,Total Amount
+1,24-11-2023,CUST001,Male,34,Beauty,3,50,150
+2,27-02-2023,CUST002,Female,26,Clothing,2,500,1000
+3,13-01-2023,CUST003,Male,50,Electronics,1,30,30
+```
+
+Each row represents a **single transaction**.
+
+For forecasting, transactions are aggregated into **daily sales revenue time-series data**.
+
+---
+
+# Feature Engineering
+
+To improve forecasting performance, several features are generated:
+
+### Calendar Features
+
+* day_of_week
+* month
+
+These help capture seasonal purchasing patterns.
+
+---
+
+### Lag Features
+
+* lag_1
+* lag_7
+* lag_14
+
+Lag features allow the model to learn temporal dependencies.
+
+---
+
+### Rolling Statistics
+
+* rolling_mean_7
+
+Rolling averages smooth short-term fluctuations and capture local trends.
+
+---
+
+# Baseline Models
+
+Before applying machine learning models, benchmark baselines are implemented:
+
+### Naive Forecast
 
 Uses the previous day's sales as prediction.
 
----
-
-### Moving Average Baseline
-
-Computes rolling averages to smooth short-term fluctuations.
+```
+Sales(t) = Sales(t-1)
+```
 
 ---
 
-### Feedforward Neural Network (MLP)
+### Moving Average
 
-A PyTorch-based regression model trained on lag-based features.
+Uses rolling averages of previous days to generate predictions.
 
-Used for category-level sales prediction.
+These baselines provide **fair performance comparisons for ML models**.
 
 ---
 
-### LSTM Model
+# Machine Learning Model
 
-Deep learning model designed for sequential time-series data.
+The project implements a **PyTorch Feedforward Neural Network (MLP)** for sales forecasting.
 
-Captures temporal dependencies across historical sales sequences.
+Model architecture:
+
+```
+Input Features
+      ↓
+Linear Layer (64)
+      ↓
+ReLU
+      ↓
+Linear Layer (32)
+      ↓
+ReLU
+      ↓
+Output (Predicted Sales)
+```
+
+The neural network learns nonlinear relationships between engineered features and future sales.
+
+---
+
+# Evaluation Metrics
+
+Model performance is evaluated using:
+
+### Mean Absolute Error (MAE)
+
+Measures average prediction error.
+
+### Root Mean Squared Error (RMSE)
+
+Penalizes large forecasting errors more strongly.
+
+These metrics help compare baseline and machine learning models.
 
 ---
 
@@ -73,6 +149,7 @@ predictive-sales-modeling
 │   └── retail_sales.csv
 │
 ├── notebooks
+│   └── sales_forecasting_analysis.ipynb
 │
 ├── screenshots
 │   └── img.jpg
@@ -117,32 +194,40 @@ python src/training_pipeline.py
 
 The pipeline will:
 
-* load retail sales data
-* engineer time-series features
-* train machine learning models
-* evaluate forecasting performance
+1. Load retail transaction data
+2. Aggregate daily revenue
+3. Generate forecasting features
+4. Train the PyTorch model
+5. Evaluate model performance
 
 ---
 
-# Evaluation Metrics
+# Notebook Analysis
 
-Models are evaluated using:
+The notebook contains:
 
-* Mean Absolute Error (MAE)
-* Root Mean Squared Error (RMSE)
+* exploratory data analysis
+* sales trend visualization
+* baseline forecasting experiments
+* feature engineering demonstrations
 
-These metrics help measure forecasting accuracy and business impact.
+Run the notebook:
+
+```
+jupyter notebook notebooks/sales_forecasting_analysis.ipynb
+```
 
 ---
 
 # Technologies Used
 
 * Python
-* PyTorch
 * Pandas
 * NumPy
+* PyTorch
 * Scikit-learn
 * Matplotlib
+* Seaborn
 
 ---
 
@@ -151,9 +236,21 @@ These metrics help measure forecasting accuracy and business impact.
 This project demonstrates techniques used in:
 
 * retail demand forecasting
+* revenue prediction
 * supply chain analytics
-* sales prediction systems
-* AI-driven business planning
+* machine learning for business planning
+
+---
+
+# Future Improvements
+
+Potential enhancements include:
+
+* LSTM deep learning forecasting
+* hyperparameter tuning
+* MLflow experiment tracking
+* automated forecast dashboards
+* multi-category sales forecasting
 
 ---
 
@@ -161,4 +258,3 @@ This project demonstrates techniques used in:
 
 Manish Rathi
 AI & Python Engineering Portfolio
-
