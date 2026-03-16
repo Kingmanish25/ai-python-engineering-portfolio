@@ -1,14 +1,57 @@
 import json
 import csv
+import argparse
+import logging
+import os
 
-with open("data.json") as f:
-    data = json.load(f)
 
-with open("output.csv", "w", newline="") as f:
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
 
-    writer = csv.DictWriter(f, fieldnames=data[0].keys())
 
-    writer.writeheader()
-    writer.writerows(data)
+def convert_json_to_csv(input_file, output_file):
 
-print("Converted JSON to CSV")
+    if not os.path.exists(input_file):
+        raise FileNotFoundError(f"Input file not found: {input_file}")
+
+    with open(input_file, "r") as f:
+        data = json.load(f)
+
+    if not isinstance(data, list):
+        raise ValueError("JSON file must contain a list of objects")
+
+    with open(output_file, "w", newline="") as f:
+
+        writer = csv.DictWriter(f, fieldnames=data[0].keys())
+
+        writer.writeheader()
+        writer.writerows(data)
+
+    logging.info(f"Conversion completed: {input_file} → {output_file}")
+
+
+def main():
+
+    parser = argparse.ArgumentParser(description="JSON to CSV Converter CLI Tool")
+
+    parser.add_argument(
+        "--input",
+        required=True,
+        help="Path to input JSON file"
+    )
+
+    parser.add_argument(
+        "--output",
+        required=True,
+        help="Path to output CSV file"
+    )
+
+    args = parser.parse_args()
+
+    convert_json_to_csv(args.input, args.output)
+
+
+if __name__ == "__main__":
+    main()
