@@ -1,53 +1,61 @@
-import pandas as pd
+from invoice_processor import (
+    load_invoices,
+    sales_by_city,
+    sales_by_product,
+    customer_summary
+)
 
-from email_parser import parse_email
-from invoice_classifier import InvoiceClassifier
-from validation_engine import validate_invoice
+from validation_engine import validate_dataset
 
-
-def load_training_data():
-
-    df = pd.read_csv("../data/data.csv")
-
-    texts = df["invoice_text"]
-
-    labels = df["category"]
-
-    return texts, labels
+from anomaly_detection import (
+    detect_large_orders,
+    ml_anomaly_detection
+)
 
 
 def run_pipeline():
 
-    print("Loading training data")
+    print("Loading invoice dataset...")
 
-    texts, labels = load_training_data()
+    df = load_invoices("../data/data1.csv")
 
-    classifier = InvoiceClassifier()
+    print("Total invoices:", len(df))
 
-    classifier.train(texts, labels)
+    print("\nRunning validation checks...")
 
-    print("Classifier trained")
+    validation_errors = validate_dataset(df)
 
-    sample_invoice = {
-        "invoice_id": "INV001",
-        "vendor": "ABC Corp",
-        "amount": 1200,
-        "text": "Invoice for office supplies"
-    }
+    if validation_errors:
+        print("Validation issues found:")
+        for err in validation_errors[:5]:
+            print(err)
+    else:
+        print("No validation issues found")
 
-    print("Validating invoice")
+    print("\nDetecting large orders...")
 
-    valid, errors = validate_invoice(sample_invoice)
+    large_orders = detect_large_orders(df)
 
-    if not valid:
-        print("Validation errors:", errors)
-        return
+    print("Large orders detected:", len(large_orders))
 
-    category = classifier.predict(sample_invoice["text"])
+    print("\nRunning ML anomaly detection...")
 
-    print("Invoice classified as:", category)
+    anomalies = ml_anomaly_detection(df)
 
-    print("Automation pipeline completed")
+    print("ML anomalies detected:", len(anomalies))
+
+    print("\nGenerating reports...")
+
+    print("\nTop Cities by Revenue")
+    print(sales_by_city(df).head())
+
+    print("\nTop Products by Revenue")
+    print(sales_by_product(df).head())
+
+    print("\nTop Customers")
+    print(customer_summary(df).head())
+
+    print("\nAutomation pipeline completed successfully")
 
 
 if __name__ == "__main__":
