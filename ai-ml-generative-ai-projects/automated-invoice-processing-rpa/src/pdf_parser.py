@@ -4,27 +4,28 @@ import re
 
 def parse_invoice(file_path):
 
+    text = ""
+
     with pdfplumber.open(file_path) as pdf:
-
-        text = ""
-
         for page in pdf.pages:
-            text += page.extract_text() + "\n"
+            extracted = page.extract_text()
+            if extracted:
+                text += extracted + "\n"
 
     invoice_number = extract_invoice_number(text)
-    vendor = extract_vendor(text)
-    amount = extract_amount(text)
+    supplier = extract_supplier(text)
+    total_amount = extract_total(text)
 
     return {
         "invoice_number": invoice_number,
-        "vendor": vendor,
-        "amount": amount
+        "vendor": supplier,
+        "amount": total_amount
     }
 
 
 def extract_invoice_number(text):
 
-    match = re.search(r"Invoice\s*#?:?\s*(\w+)", text, re.IGNORECASE)
+    match = re.search(r"INVOICE\s+(INV-\d+)", text)
 
     if match:
         return match.group(1)
@@ -32,21 +33,21 @@ def extract_invoice_number(text):
     return "UNKNOWN"
 
 
-def extract_vendor(text):
+def extract_supplier(text):
 
-    lines = text.split("\n")
+    match = re.search(r"Supplier:\s*(.*)", text)
 
-    if len(lines) > 0:
-        return lines[0]
+    if match:
+        return match.group(1).strip()
 
     return "UNKNOWN"
 
 
-def extract_amount(text):
+def extract_total(text):
 
-    match = re.search(r"Total\s*\$?\s*([0-9,.]+)", text, re.IGNORECASE)
+    match = re.search(r"Total Amount:\s*([0-9.]+)", text)
 
     if match:
-        return float(match.group(1).replace(",", ""))
+        return float(match.group(1))
 
     return 0.0
