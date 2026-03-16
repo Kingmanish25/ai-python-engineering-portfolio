@@ -1,1 +1,4 @@
-requests
+# URL Status Checker CLI Tool
+# External dependency required for HTTP requests
+
+requests==2.31.0
