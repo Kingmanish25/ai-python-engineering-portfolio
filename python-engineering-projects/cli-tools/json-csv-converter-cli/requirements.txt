@@ -1,1 +1,9 @@
+# JSON to CSV Converter CLI Tool
+# This project uses only Python standard library modules.
 
+# Standard library modules used:
+# json
+# csv
+# argparse
+# logging
+# os
