@@ -1,2 +1,5 @@
-yfinance
-pandas
+# Risk Volatility Analyzer
+# External dependencies required for financial data analysis
+
+pandas==2.2.2
+yfinance==0.2.40
