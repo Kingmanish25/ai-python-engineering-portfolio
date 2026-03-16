@@ -1,1 +1,8 @@
-(no external dependencies)
+# Password Generator CLI Tool
+# This project uses only Python standard library modules.
+
+# Standard library modules used:
+# argparse
+# random
+# string
+# logging
