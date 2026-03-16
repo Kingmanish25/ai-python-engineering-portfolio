@@ -95,13 +95,13 @@ Example terminal output:
 Another example run with a different log file:
 
 ```
-2025-07-21 19:12:14 - INFO - Total ERROR entries: 1
+2025-07-18 19:18:14 - INFO - Total ERROR entries: 1
 ```
 
 Example run after updating logs:
 
 ```
-2025-07-24 19:14:22 - INFO - Total ERROR entries: 4
+2025-07-18 19:24:22 - INFO - Total ERROR entries: 4
 ```
 
 ---
