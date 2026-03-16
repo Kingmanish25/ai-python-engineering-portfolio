@@ -1,10 +1,8 @@
 import torch
 import torch.optim as optim
-import pandas as pd
-import numpy as np
 import json
 
-from data_loader import load_data, train_test_split_time
+from data_loader import load_data, aggregate_daily_sales, train_test_split_time
 from feature_engineering import create_features
 from sales_model import SalesMLP
 from evaluate_model import evaluate
@@ -12,13 +10,25 @@ from evaluate_model import evaluate
 
 def run_pipeline():
 
+    # load raw transactions
     df = load_data()
 
+    # aggregate daily revenue
+    df = aggregate_daily_sales(df)
+
+    # create forecasting features
     df = create_features(df)
 
     train, test = train_test_split_time(df)
 
-    features = ["lag_1", "lag_7", "lag_14", "rolling_mean_7", "day_of_week", "month"]
+    features = [
+        "lag_1",
+        "lag_7",
+        "lag_14",
+        "rolling_mean_7",
+        "day_of_week",
+        "month",
+    ]
 
     X_train = train[features].values
     y_train = train["sales"].values
@@ -37,7 +47,7 @@ def run_pipeline():
 
     loss_fn = torch.nn.MSELoss()
 
-    for epoch in range(50):
+    for epoch in range(100):
 
         preds = model(X_train)
 
@@ -49,9 +59,9 @@ def run_pipeline():
 
         optimizer.step()
 
-        if epoch % 10 == 0:
+        if epoch % 20 == 0:
 
-            print("Epoch:", epoch, "Loss:", loss.item())
+            print(f"Epoch {epoch} | Loss {loss.item():.4f}")
 
     predictions = model(X_test).detach().numpy().flatten()
 
@@ -62,7 +72,7 @@ def run_pipeline():
 
     with open("../metrics.json", "w") as f:
 
-        json.dump(metrics, f)
+        json.dump(metrics, f, indent=4)
 
 
 if __name__ == "__main__":
