@@ -1,1 +1,4 @@
+# Data Deduplication Tool
+# External dependency required for dataset processing
 
+pandas==2.2.2
