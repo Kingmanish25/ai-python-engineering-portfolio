@@ -1,39 +1,49 @@
-# Advanced Stock Price Forecasting
+# Advanced Stock Forecasting
 
-This project implements multiple machine learning and statistical models for **stock price forecasting using historical market data**.
+This project implements an **advanced stock price forecasting system** using statistical models and deep learning techniques.
+It demonstrates how machine learning can be applied to **financial time-series forecasting** using historical stock market data.
 
-The system compares different forecasting approaches including **ARIMA, Facebook Prophet, and LSTM neural networks** to predict future stock prices.
+The system compares multiple forecasting approaches including:
 
-The project demonstrates how to build a **complete time-series forecasting pipeline used in quantitative finance and financial analytics systems**.
+* ARIMA statistical forecasting
+* Facebook Prophet forecasting
+* LSTM deep learning models
+* Transformer-based forecasting
+* Technical indicators such as RSI and MACD
+
+The project is designed to simulate a **real-world machine learning pipeline used in quantitative finance and financial analytics systems.**
 
 ---
 
 # Project Overview
 
-Stock price prediction is a complex time-series forecasting problem that involves analyzing historical market data to estimate future price movements.
+Stock price forecasting is a time-series prediction problem where historical market data is analyzed to predict future price movements.
 
-This project builds a forecasting system that:
+This project builds a modular forecasting pipeline that:
 
-* Loads historical stock data
-* Performs time series preprocessing
-* Trains multiple forecasting models
-* Generates predictions
-* Evaluates model performance
+1. Loads historical stock market data
+2. Computes financial indicators
+3. Trains multiple forecasting models
+4. Generates future price predictions
+5. Evaluates model performance
+6. Visualizes forecast results
 
-The goal is to compare traditional statistical models with modern deep learning approaches.
+The goal is to compare traditional statistical models with modern machine learning and deep learning approaches.
 
 ---
 
 # Dataset
 
-The dataset contains historical stock market data including:
+The dataset contains historical stock market data with over **11,000 records**.
 
-* Open price
-* High price
-* Low price
-* Close price
-* Adjusted close price
-* Trading volume
+Features included:
+
+* Adjusted Close Price
+* Closing Price
+* High Price
+* Low Price
+* Opening Price
+* Trading Volume
 
 Example dataset structure:
 
@@ -41,56 +51,82 @@ Example dataset structure:
 Date,Adj Close,Close,High,Low,Open,Volume
 12-12-1980,0.0988,0.1283,0.1289,0.1283,0.1283,469033600
 15-12-1980,0.0936,0.1216,0.1222,0.1216,0.1222,175884800
-16-12-1980,0.0868,0.1127,0.1132,0.1127,0.1132,105728000
 ```
 
-Dataset size:
-
-```
-Total rows: 11,108
-```
-
-This large dataset allows robust time series modeling and evaluation.
+The dataset enables training robust models for long-term stock market forecasting.
 
 ---
 
 # Models Implemented
 
-The project implements three forecasting models:
-
 ## ARIMA Model
 
-ARIMA (AutoRegressive Integrated Moving Average) is a statistical model used for time-series forecasting.
+A classical statistical time-series forecasting model used widely in financial analysis.
 
 Capabilities:
 
-* Captures trends and seasonality
-* Suitable for stationary time series
-* Widely used in financial forecasting
+* Captures trend and seasonal patterns
+* Works well with stationary time-series data
 
 ---
 
-## Prophet Model
+## Facebook Prophet
 
-Facebook Prophet is designed for forecasting business time series.
+A forecasting model developed by Meta designed for business time-series forecasting.
 
 Capabilities:
 
-* Handles missing data
-* Robust to outliers
-* Models trend and seasonality automatically
+* Robust to missing values
+* Handles trend changes automatically
+* Effective for business forecasting tasks
 
 ---
 
 ## LSTM Neural Network
 
-LSTM (Long Short-Term Memory) is a deep learning model designed for sequential data.
+A deep learning model designed for sequential data and time-series forecasting.
 
 Capabilities:
 
 * Captures long-term temporal dependencies
-* Effective for complex nonlinear time-series patterns
-* Widely used in deep learning forecasting systems
+* Effective for nonlinear patterns in financial markets
+
+---
+
+## Transformer Forecasting Model
+
+A modern deep learning architecture based on self-attention mechanisms.
+
+Capabilities:
+
+* Handles long sequences efficiently
+* Captures complex temporal relationships
+
+---
+
+# Technical Indicators
+
+The project also computes financial indicators used in algorithmic trading.
+
+### RSI (Relative Strength Index)
+
+Measures the momentum of stock price movements.
+
+Used for identifying:
+
+* Overbought conditions
+* Oversold conditions
+
+---
+
+### MACD (Moving Average Convergence Divergence)
+
+Used to identify trend changes and market momentum.
+
+Used for:
+
+* Buy and sell signals
+* Trend strength analysis
 
 ---
 
@@ -103,42 +139,57 @@ advanced-stock-forecasting
 │   └── data.csv
 │
 ├── notebooks
-│   └── README.md
+│   └── exploratory_analysis.ipynb
 │
 ├── screenshots
-│   └── img.png
+│   └── forecast_plot.png
 │
 ├── src
-│   ├── data_loader.py
-│   ├── arima_model.py
-│   ├── prophet_model.py
-│   ├── lstm_model.py
-│   ├── evaluate.py
-│   └── forecast_pipeline.py
 │
-├── README.md
-└── requirements.txt
+│   ├── data_loader.py
+│   ├── indicators.py
+│   ├── visualization.py
+│   ├── hyperparameter_tuning.py
+│
+│   ├── models
+│   │   ├── arima_model.py
+│   │   ├── prophet_model.py
+│   │   ├── lstm_model.py
+│   │   └── transformer_model.py
+│
+│   ├── evaluation
+│   │   └── evaluate.py
+│
+│   └── pipeline
+│       └── forecast_pipeline.py
+│
+├── requirements.txt
+└── README.md
 ```
 
 ---
 
-# Pipeline Architecture
+# Machine Learning Pipeline
 
-The forecasting pipeline follows a modular machine learning workflow.
+The forecasting pipeline follows a standard machine learning workflow.
 
 ```
 Data Loading
       ↓
 Data Preprocessing
       ↓
+Feature Engineering (RSI, MACD)
+      ↓
 Model Training
       ↓
 Forecast Generation
       ↓
 Model Evaluation
+      ↓
+Visualization
 ```
 
-The system trains multiple models and compares their performance.
+This architecture mirrors real-world financial analytics systems.
 
 ---
 
@@ -164,33 +215,40 @@ pip install -r requirements.txt
 Run the forecasting pipeline:
 
 ```
-python src/forecast_pipeline.py
+python src/pipeline/forecast_pipeline.py
 ```
 
 The pipeline will:
 
 1. Load stock market data
-2. Train forecasting models
-3. Generate predictions
-4. Evaluate model performance
+2. Compute financial indicators
+3. Train forecasting models
+4. Generate price forecasts
+5. Evaluate model performance
+6. Visualize prediction results
 
 ---
 
 # Evaluation Metrics
 
-The models are evaluated using standard regression metrics such as:
+Model performance is evaluated using common regression metrics:
 
 * Mean Absolute Error (MAE)
 * Root Mean Squared Error (RMSE)
 * Mean Absolute Percentage Error (MAPE)
 
-These metrics help compare the forecasting performance of different models.
+These metrics help compare the effectiveness of different forecasting approaches.
 
 ---
 
-# Screenshots
+# Visualization
 
-Example forecast outputs and model results are stored in the **screenshots** directory.
+Forecast results are visualized using line plots showing:
+
+* Historical stock prices
+* Predicted future prices
+
+Example outputs are available in the **screenshots** directory.
 
 ---
 
@@ -199,11 +257,12 @@ Example forecast outputs and model results are stored in the **screenshots** dir
 * Python
 * Pandas
 * NumPy
-* Statsmodels
-* Facebook Prophet
-* TensorFlow / Keras
-* Scikit-learn
 * Matplotlib
+* Scikit-learn
+* Statsmodels
+* Prophet
+* TensorFlow
+* Financial time-series analysis
 
 ---
 
@@ -214,8 +273,8 @@ This project demonstrates techniques used in:
 * Quantitative finance
 * Algorithmic trading research
 * Financial time-series forecasting
+* AI-driven financial analytics systems
 * Market trend prediction
-* AI-driven financial analytics
 
 ---
 
@@ -223,11 +282,11 @@ This project demonstrates techniques used in:
 
 Potential improvements include:
 
-* Transformer-based forecasting models
-* Hyperparameter optimization
-* Multi-stock forecasting
-* Feature engineering with technical indicators
-* Real-time data ingestion pipelines
+* Transformer-based forecasting improvements
+* Hyperparameter optimization pipelines
+* Multi-stock forecasting models
+* Integration with live financial APIs
+* Real-time prediction dashboards
 
 ---
 
@@ -235,4 +294,3 @@ Potential improvements include:
 
 Manish Rathi
 AI & Python Engineering Portfolio
-
