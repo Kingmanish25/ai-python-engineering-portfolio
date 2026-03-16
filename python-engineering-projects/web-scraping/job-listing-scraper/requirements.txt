@@ -1,2 +1,5 @@
-requests
-beautifulsoup4
+# Job Listing Scraper
+# External dependencies required for web scraping
+
+requests==2.31.0
+beautifulsoup4==4.12.3
