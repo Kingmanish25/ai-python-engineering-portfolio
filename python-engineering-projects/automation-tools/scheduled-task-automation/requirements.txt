@@ -1,1 +1,4 @@
-schedule
+# Scheduled Task Automation Tool
+# External dependency required for scheduling tasks
+
+schedule==1.2.1
