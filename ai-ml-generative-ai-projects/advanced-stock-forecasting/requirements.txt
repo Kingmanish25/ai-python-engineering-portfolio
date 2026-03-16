@@ -1,8 +1,24 @@
+# Data Processing
 pandas==2.2.2
 numpy==1.26.4
-scikit-learn==1.4.2
+
+# Visualization
 matplotlib==3.8.4
+seaborn==0.13.2
+
+# Machine Learning
+scikit-learn==1.4.2
+
+# Time Series Models
 statsmodels==0.14.2
 prophet==1.1.5
+
+# Deep Learning
 tensorflow==2.15.0
+
+# Financial Data
 yfinance==0.2.40
+
+# Notebook Support
+jupyter==1.0.0
+ipykernel==6.29.4
