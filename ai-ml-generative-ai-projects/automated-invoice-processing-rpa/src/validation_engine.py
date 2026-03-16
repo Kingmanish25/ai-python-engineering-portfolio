@@ -1,11 +1,12 @@
-def validate_invoice(invoice):
+def validate_invoice(data):
 
-    if invoice["invoice_number"] == "UNKNOWN":
-        print("Invalid invoice number")
+    if not data["invoice_number"]:
         return False
 
-    if invoice["amount"] <= 0:
-        print("Invalid invoice amount")
+    if not data["supplier"]:
+        return False
+
+    if not data["total_amount"]:
         return False
 
     return True
