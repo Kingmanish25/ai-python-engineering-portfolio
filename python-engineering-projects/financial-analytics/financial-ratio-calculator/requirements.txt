@@ -1,1 +1,6 @@
-(no external dependencies)
+# Financial Ratio Calculator
+# This project uses only Python standard library modules.
+
+# Standard library modules used:
+# argparse
+# logging
