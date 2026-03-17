@@ -1,10 +1,14 @@
-from langchain.vectorstores import FAISS
+from langchain_community.vectorstores import FAISS
+from embeddings import get_embeddings
+import os
 
-def build_vector_index(chunks, embeddings):
+VECTOR_PATH = "embeddings/faiss_index"
 
-    vector_db = FAISS.from_documents(
-        chunks,
-        embeddings
-    )
+def load_vectorstore():
+    embeddings = get_embeddings()
+    return FAISS.load_local(VECTOR_PATH, embeddings, allow_dangerous_deserialization=True)
 
-    return vector_db
+def save_vectorstore(docs):
+    embeddings = get_embeddings()
+    db = FAISS.from_documents(docs, embeddings)
+    db.save_local(VECTOR_PATH)
