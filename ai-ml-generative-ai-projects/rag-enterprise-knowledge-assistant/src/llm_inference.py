@@ -1,9 +1,4 @@
-from langchain.llms import Ollama
+from langchain_community.llms import Ollama
 
-def load_llm():
-
-    llm = Ollama(
-        model="llama3"
-    )
-
-    return llm
+def get_llm():
+    return Ollama(model="llama3")
