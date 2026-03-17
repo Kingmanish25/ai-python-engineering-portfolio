@@ -1,12 +1,18 @@
-from retriever import retrieve_context
+from retriever import get_retriever
+from reranker import rerank
+from llm_inference import get_llm
 from answer_generator import generate_answer
 
-def run_rag(vector_db, llm, query):
+def run_rag(query, year=None, month=None):
+    retriever = get_retriever(query, year, month)
+    docs = retriever.get_relevant_documents(query)
 
-    docs = retrieve_context(vector_db, query)
+    docs = rerank(query, docs)
 
-    context = "\n".join([d.page_content for d in docs])
+    llm = get_llm()
+    answer = generate_answer(llm, query, docs)
 
-    answer = generate_answer(llm, context, query)
-
-    return answer
+    return {
+        "answer": answer,
+        "sources": [d.metadata for d in docs]
+    }
