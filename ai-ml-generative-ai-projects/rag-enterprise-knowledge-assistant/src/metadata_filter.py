@@ -1,15 +1,7 @@
-def filter_documents(docs, year=None, doc_type=None):
-
-    filtered = []
-
-    for d in docs:
-
-        if year and d.metadata.get("year") != year:
-            continue
-
-        if doc_type and d.metadata.get("type") != doc_type:
-            continue
-
-        filtered.append(d)
-
-    return filtered
+def build_filter(year=None, month=None):
+    filt = {}
+    if year:
+        filt["year"] = year
+    if month:
+        filt["month"] = month
+    return filt if filt else None
