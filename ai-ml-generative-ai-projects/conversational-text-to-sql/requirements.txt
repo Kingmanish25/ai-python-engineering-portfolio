@@ -1,7 +1,19 @@
+# Core
 pandas==2.2.2
 numpy==1.26.4
-streamlit==1.36.0
+
+# LLM
 openai==1.30.1
+
+# UI
+streamlit==1.36.0
+
+# Visualization
 matplotlib==3.8.4
 seaborn==0.13.2
+
+# Environment
 python-dotenv==1.0.1
+
+# Optional (future-ready)
+langchain==0.2.1
