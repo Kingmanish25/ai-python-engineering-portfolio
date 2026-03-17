@@ -1,5 +1,7 @@
-
-langchain
-sqlite3
-openai / huggingface
-pandas
+pandas==2.2.2
+numpy==1.26.4
+streamlit==1.36.0
+openai==1.30.1
+matplotlib==3.8.4
+seaborn==0.13.2
+python-dotenv==1.0.1
