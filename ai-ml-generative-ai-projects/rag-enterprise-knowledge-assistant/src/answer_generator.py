@@ -1,17 +1,18 @@
-def generate_answer(llm, context, query):
+def generate_answer(llm, query, docs):
+    context = "\n\n".join([d.page_content for d in docs])
 
     prompt = f"""
-    Use the context below to answer the question.
+You are an enterprise financial assistant.
 
-    Context:
-    {context}
+Use ONLY the context below.
 
-    Question:
-    {query}
+Context:
+{context}
 
-    Provide source references.
-    """
+Question:
+{query}
 
-    response = llm(prompt)
+Answer:
+"""
 
-    return response
+    return llm.invoke(prompt)
