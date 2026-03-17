@@ -1,17 +1,34 @@
-Financial Documents
-       ↓
+Financial Documents (PDFs)
+        ↓
 Document Loader
-       ↓
-Chunking
-       ↓
-Embeddings
-       ↓
-FAISS Vector DB
-       ↓
-Retriever
-       ↓
-Ollama LLM
-       ↓
+        ↓
+Chunking (Text Splitter)
+        ↓
+Embeddings (nomic-embed-text)
+        ↓
+FAISS Vector Database
+        ↓
+----------------------------------------
+User Query
+        ↓
+Query Planner (LLM Decision Engine)
+        ↓
+Multi-Query Retriever
+        ↓
+Metadata Filter (Year/Month)
+        ↓
+Top 20 Documents
+        ↓
+CrossEncoder Reranker
+        ↓
+Top 5 Documents
+        ↓
+LLM (LLaMA3 - Ollama)
+        ↓
 Answer Generator
-       ↓
-Streamlit UI
+        ↓
+Redis Cache
+        ↓
+----------------------------------------
+        ↓
+Response → Streamlit UI / FastAPI API
