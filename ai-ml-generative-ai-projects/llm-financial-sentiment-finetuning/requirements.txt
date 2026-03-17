@@ -1,22 +1,8 @@
-# Core
 pandas==2.2.2
 numpy==1.26.4
-
-# NLP / Transformers
-transformers==4.41.2
-datasets==2.19.1
-tokenizers==0.19.1
-
-# Deep Learning
 torch==2.3.0
-
-# ML Utilities
+transformers==4.41.2
 scikit-learn==1.4.2
-
-# Visualization
+tqdm==4.66.4
+streamlit==1.36.0
 matplotlib==3.8.4
-seaborn==0.13.2
-
-# Notebook
-jupyter==1.0.0
-ipykernel==6.29.4
