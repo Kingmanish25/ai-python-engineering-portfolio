@@ -178,8 +178,8 @@ python main.py
 
 ## 🔗 Connect With Me
 
-* 💼 LinkedIn: https://www.linkedin.com/in/manish-r23196/
-* 📧 Email: [your-email@example.com](mailto:your-email@example.com)
+* 💼 LinkedIn: [https://www.linkedin.com/in/manish-r23196/](https://www.linkedin.com/in/manish-r-2319631b4/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BDK%2B49W2TT8Cakm1Gf%2FTwGQ%3D%3D)
+* 📧 Email: [your-rathimanish5143@gmail.com](mailto:rathimanish5143@gmail.com)
 
 ---
 
