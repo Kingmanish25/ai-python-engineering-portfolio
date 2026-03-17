@@ -4,6 +4,59 @@
 
 ---
 
+## 🔥 Featured Projects (Recruiter Highlights)
+
+### 🧠 1. [RAG Enterprise Knowledge Assistant](./ai-ml-generative-ai-projects/rag-enterprise-knowledge-assistant)
+
+🚀 Production-style Retrieval-Augmented Generation system for enterprise knowledge retrieval
+
+* Agentic RAG with query planning & multi-query retrieval
+* FAISS vector search + Redis caching
+* FastAPI backend + Streamlit interface
+* Real-time document ingestion pipeline
+
+👉 **Impact:** Solves enterprise knowledge retrieval using LLM + semantic search
+**Tech:** Python, LangChain, FAISS, Redis, FastAPI, Streamlit
+
+---
+
+### 💬 2. [Conversational Text-to-SQL](./ai-ml-generative-ai-projects/conversational-text-to-sql)
+
+🚀 Natural Language → SQL system powered by LLMs
+
+* Converts user queries into executable SQL
+* LangChain-based query generation pipeline
+* Structured database interaction
+
+👉 **Impact:** Enables non-technical users to query databases using natural language
+**Tech:** Python, LangChain, SQL, LLMs
+
+---
+
+### 📊 3. [Churn Prediction ML Pipeline](./ai-ml-generative-ai-projects/churn-prediction-ml-pipeline)
+
+🚀 End-to-end production-style ML pipeline
+
+* Data preprocessing + feature engineering
+* Model training, evaluation & pipeline design
+
+👉 **Impact:** Helps businesses predict and reduce customer churn
+**Tech:** Python, Scikit-learn, Pandas, ML Pipelines
+
+---
+
+### 🧬 4. [GAN Synthetic Data Generator](./ai-ml-generative-ai-projects/gan-synthetic-data-generator)
+
+🚀 Deep learning-based synthetic data generation system
+
+* GAN architecture implementation
+* Generates realistic synthetic datasets
+
+👉 **Impact:** Enables data augmentation where real data is limited
+**Tech:** PyTorch, Deep Learning, GANs
+
+---
+
 ## 👨‍💻 About Me
 
 I am a **Data Scientist & Generative AI Engineer** specializing in:
@@ -14,7 +67,19 @@ I am a **Data Scientist & Generative AI Engineer** specializing in:
 * 🤖 AI Automation & Intelligent Systems
 * 🐍 Production-grade Python Engineering
 
-This repository is a curated portfolio of **real-world AI systems and engineering projects**, designed to demonstrate **practical, deployable, and scalable solutions**.
+I build **real-world AI systems** focused on **scalability, performance, and practical deployment**.
+
+---
+
+## 🏗️ System Design & Architecture
+
+📁 `architecture-diagrams`
+
+Includes high-level system designs for:
+
+* RAG pipelines
+* LLM applications
+* ML systems
 
 ---
 
@@ -36,38 +101,12 @@ ai-python-engineering-portfolio/
 
 📁 `ai-ml-generative-ai-projects`
 
-A collection of advanced AI systems focused on **LLMs, RAG, ML pipelines, and deep learning**.
+Collection of advanced AI systems covering:
 
-### 🔥 Featured Projects
-
-#### 🔹 RAG Enterprise Knowledge Assistant
-
-* Agentic RAG system with query planning
-* Multi-query retrieval + reranking
-* Redis caching + FastAPI + Streamlit
-* Real-time document ingestion
-
-#### 🔹 Conversational Text-to-SQL
-
-* Natural language → SQL system
-* LangChain + LLM-powered query generation
-
-#### 🔹 LLM Financial Sentiment Fine-Tuning
-
-* BERT fine-tuning for financial NLP
-* End-to-end training + inference pipeline
-
-#### 🔹 GAN Synthetic Data Generator
-
-* Deep learning-based synthetic data generation
-
-#### 🔹 Churn Prediction ML Pipeline
-
-* End-to-end ML workflow with feature engineering
-
-#### 🔹 Product Recommendation System
-
-* Hybrid recommendation engine (collaborative + content-based)
+* LLM applications
+* RAG systems
+* ML pipelines
+* Deep learning solutions
 
 ---
 
@@ -75,37 +114,13 @@ A collection of advanced AI systems focused on **LLMs, RAG, ML pipelines, and de
 
 📁 `python-engineering-projects`
 
-Focused on **real-world automation, system design, and backend engineering**.
-
-### 🔹 Key Areas
+Focused on backend engineering and real-world automation:
 
 * Automation tools & scripts
 * Data processing pipelines
 * CLI tools
 * Web scraping systems
 * Backend utilities
-
----
-
-## 🏗️ System Design & Architecture
-
-📁 `architecture-diagrams`
-
-Includes high-level system designs for:
-
-* RAG pipelines
-* LLM applications
-* ML systems
-
----
-
-## 📘 Documentation
-
-📁 `docs`
-
-* Project breakdowns
-* Architecture explanations
-* Portfolio overview
 
 ---
 
@@ -153,7 +168,7 @@ Includes high-level system designs for:
 Clone the repository:
 
 ```bash
-git clone https://github.com/<your-username>/ai-python-engineering-portfolio.git
+git clone https://github.com/Kingmanish25/ai-python-engineering-portfolio.git
 cd ai-python-engineering-portfolio
 ```
 
@@ -178,8 +193,8 @@ python main.py
 
 ## 🔗 Connect With Me
 
-* 💼 LinkedIn: [https://www.linkedin.com/in/manish-r23196/](https://www.linkedin.com/in/manish-r-2319631b4/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BDK%2B49W2TT8Cakm1Gf%2FTwGQ%3D%3D)
-* 📧 Email: [your-rathimanish5143@gmail.com](mailto:rathimanish5143@gmail.com)
+* 💼 LinkedIn: https://www.linkedin.com/in/manish-r23196/
+* 📧 Email: [rathimanish5143@gmail.com](mailto:rathimanish5143@gmail.com)
 
 ---
 
@@ -199,5 +214,3 @@ If you find this portfolio useful:
 👉 Star the repository
 👉 Share with others
 👉 Connect for collaboration
-
----
