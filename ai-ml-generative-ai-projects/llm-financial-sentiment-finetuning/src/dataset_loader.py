@@ -16,7 +16,7 @@ class FinancialDataset(Dataset):
 
     def __getitem__(self, idx):
         text = str(self.texts[idx])
-        label = int(self.labels[idx])  # already 0/1
+        label = int(self.labels[idx])
 
         encoding = self.tokenizer(
             text,
@@ -36,10 +36,7 @@ class FinancialDataset(Dataset):
 def load_data(path):
     df = pd.read_csv(path)
 
-    # Ensure correct columns
     df = df[["text", "sentiment"]].dropna()
-
-    # Ensure numeric labels
     df["sentiment"] = df["sentiment"].astype(int)
 
     train_texts, val_texts, train_labels, val_labels = train_test_split(
@@ -47,7 +44,7 @@ def load_data(path):
         df["sentiment"].tolist(),
         test_size=0.2,
         random_state=42,
-        stratify=df["sentiment"]  # important for classification
+        stratify=df["sentiment"]
     )
 
     return train_texts, val_texts, train_labels, val_labels
