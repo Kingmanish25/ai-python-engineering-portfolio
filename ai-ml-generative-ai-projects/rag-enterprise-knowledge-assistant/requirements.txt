@@ -1,6 +1,13 @@
 langchain
+langchain-community
 faiss-cpu
-sentence-transformers
-ollama
 streamlit
-pandas
+fastapi
+uvicorn
+sentence-transformers
+redis
+ragas
+datasets
+pypdf
+ollama
+python-dotenv
