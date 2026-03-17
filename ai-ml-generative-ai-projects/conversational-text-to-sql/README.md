@@ -72,7 +72,6 @@ conversational-text-to-sql/
 │   ├── memory.py              # Conversation memory
 │   └── database_connector.py  # DB connection handler
 │
-├── .env
 ├── requirements.txt
 └── README.md
 ```
